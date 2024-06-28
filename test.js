@@ -9,6 +9,18 @@ const urlBase = `http://localhost:${PORT}`
 tape('should respond hello', (t) => {
   jsonist.get(urlBase, (err, body) => {
     if (err) t.error(err)
+
+    t.equal(body.msg, 'hello')
+    t.end()
+  })
+})
+
+tape('should respond hi', (t) => {
+  jsonist.get(urlBase, (err, body) => {
+    if (err) t.error(err)
+
+    t.equal(body.msg, 'hi')
+    t.end()
   })
 })
 
